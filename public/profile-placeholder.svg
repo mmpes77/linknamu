@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <!-- 보여 주기용 더미 프로필 사진 -->
+  <rect width="160" height="160" fill="#d1fae5"/>
+  <circle cx="80" cy="62" r="28" fill="#10b981"/>
+  <path d="M28 150c4-30 26-48 52-48s48 18 52 48z" fill="#10b981"/>
+</svg>
