@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <!-- 김개발 프로필 아바타 -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdebd9"/>
+      <stop offset="1" stop-color="#f9c9a4"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" fill="url(#bg)"/>
+  <!-- 몸통 (후드티) -->
+  <path d="M24 160c4-32 26-50 56-50s52 18 56 50z" fill="#1f2937"/>
+  <path d="M68 112l12 14 12-14" fill="none" stroke="#f2a375" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 목 -->
+  <rect x="70" y="92" width="20" height="18" rx="6" fill="#f2c9a5"/>
+  <!-- 얼굴 -->
+  <ellipse cx="80" cy="66" rx="30" ry="33" fill="#f8d7b8"/>
+  <!-- 머리카락 -->
+  <path d="M49 62c-2-24 14-38 33-38 20 0 33 14 30 38-4-10-12-16-22-17-12 4-28 6-41 17z" fill="#27272a"/>
+  <!-- 안경 -->
+  <g fill="none" stroke="#111827" stroke-width="3">
+    <rect x="56" y="62" width="20" height="15" rx="5"/>
+    <rect x="84" y="62" width="20" height="15" rx="5"/>
+    <path d="M76 68h8"/>
+  </g>
+  <!-- 눈 -->
+  <circle cx="66" cy="70" r="2.5" fill="#111827"/>
+  <circle cx="94" cy="70" r="2.5" fill="#111827"/>
+  <!-- 미소 -->
+  <path d="M71 86q9 7 18 0" fill="none" stroke="#9a3412" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- 코드 기호 -->
+  <text x="121" y="46" font-family="monospace" font-size="15" font-weight="bold" fill="#c2622d" text-anchor="middle">&lt;/&gt;</text>
+</svg>

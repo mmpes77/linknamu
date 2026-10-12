@@ -5,16 +5,21 @@ import { profile } from "@/data/profile";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center px-4 py-10">
-      {/* wireframe의 바깥 테두리 상자: 프로필과 링크 카드를 하나의 카드 안에 담습니다. */}
-      <section className="relative w-full max-w-sm rounded-3xl border border-gray-200 bg-white px-6 pb-10 pt-20 shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:px-10">
-        <div className="absolute right-3 top-3">
-          <ThemeToggle />
-        </div>
+    <main className="relative min-h-screen overflow-hidden">
+      {/* 글래스 카드 뒤로 은은하게 비치는 따뜻한 빛 번짐 (장식용) */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-orange-100/80 blur-3xl dark:bg-amber-700/20" />
+        <div className="absolute -right-20 top-1/2 h-80 w-80 rounded-full bg-orange-200/60 blur-3xl dark:bg-orange-800/20" />
+      </div>
 
+      <div className="absolute right-5 top-5 z-10 sm:right-8 sm:top-8">
+        <ThemeToggle />
+      </div>
+
+      <section className="relative mx-auto flex w-full max-w-md flex-col px-7 pb-20 pt-24 sm:pt-28">
         <ProfileHeader name={profile.name} bio={profile.bio} imageUrl={profile.imageUrl} />
 
-        <ul className="mt-8 flex flex-col gap-4">
+        <ul className="mt-12 flex flex-col gap-4">
           {profile.links.map((link) => (
             <li key={link.id}>
               <LinkCard id={link.id} title={link.title} url={link.url} />

@@ -26,8 +26,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/* 한글이 포함된 둥근 산세리프 Pretendard (사용하는 글자만 내려받는 dynamic subset) */}
+        <link
+          rel="stylesheet"
+          crossOrigin="anonymous"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
       </head>
-      <body className="bg-gray-50 antialiased transition-colors dark:bg-gray-950">{children}</body>
+      <body className="font-sans text-stone-800 antialiased dark:text-stone-100">{children}</body>
     </html>
   );
 }

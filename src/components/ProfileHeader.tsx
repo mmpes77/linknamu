@@ -9,17 +9,17 @@ type ProfileHeaderProps = {
 export default function ProfileHeader({ name, bio, imageUrl }: ProfileHeaderProps) {
   return (
     <header className="flex flex-col items-center text-center">
-      <div className="relative h-32 w-32 overflow-hidden rounded-full border-2 border-gray-200 bg-emerald-100 dark:border-gray-700 dark:bg-emerald-900 sm:h-36 sm:w-36">
+      <div className="relative h-28 w-28 overflow-hidden rounded-full bg-orange-100 shadow-[0_8px_30px_-8px_rgba(180,100,50,0.35)] ring-4 ring-white/70 dark:bg-stone-800 dark:ring-white/10 sm:h-32 sm:w-32">
         {imageUrl ? (
-          <Image src={imageUrl} alt={`${name} 프로필 사진`} fill sizes="144px" className="object-cover" priority />
+          <Image src={imageUrl} alt={`${name} 프로필 사진`} fill sizes="128px" className="object-cover" priority />
         ) : (
-          <span className="flex h-full w-full items-center justify-center text-4xl font-bold text-emerald-700 dark:text-emerald-200">
+          <span className="flex h-full w-full items-center justify-center text-4xl font-bold text-orange-700 dark:text-orange-200">
             {name.charAt(0)}
           </span>
         )}
       </div>
-      <h1 className="mt-4 text-xl font-bold text-gray-900 dark:text-gray-100">{name}</h1>
-      <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{bio}</p>
+      <h1 className="mt-6 text-2xl font-bold tracking-tight text-stone-900 dark:text-stone-50">{name}</h1>
+      <p className="mt-2 max-w-xs text-[15px] leading-relaxed text-stone-500 [word-break:keep-all] dark:text-stone-400">{bio}</p>
     </header>
   );
 }

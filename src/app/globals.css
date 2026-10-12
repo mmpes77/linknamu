@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    /* 크림색 -> 연한 살구색으로 이어지는 따뜻한 배경 */
+    background: linear-gradient(160deg, #fdfaf4 0%, #fdf1e4 45%, #fbdcc6 100%) fixed;
+  }
+
+  .dark body {
+    background: linear-gradient(160deg, #1a1614 0%, #211a16 50%, #2c1f18 100%) fixed;
+  }
+}

@@ -14,9 +14,9 @@ export type Profile = {
 
 // TODO: 보여 주기용 더미 값입니다. 실제 이름, 소개, 사진, 링크로 바꿔 주세요.
 export const profile: Profile = {
-  name: "홍길동",
-  bio: "세계 최강 바이브 코더",
-  imageUrl: "/profile-placeholder.svg",
+  name: "김개발",
+  bio: "풀스택 개발자 | 요즘에는 AI 개발에 관심이 많아요.",
+  imageUrl: "/profile.svg",
   links: [
     { id: "github", title: "GitHub", url: "https://github.com" },
     { id: "linkedin", title: "LinkedIn", url: "https://www.linkedin.com" },
