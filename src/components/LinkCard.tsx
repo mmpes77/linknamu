@@ -4,6 +4,8 @@ type LinkCardProps = {
   id: string;
   title: string;
   url: string;
+  count: number;
+  onClick?: () => void;
 };
 
 function recordClick(linkId: string) {
@@ -23,16 +25,23 @@ function recordClick(linkId: string) {
   }
 }
 
-export default function LinkCard({ id, title, url }: LinkCardProps) {
+export default function LinkCard({ id, title, url, count, onClick }: LinkCardProps) {
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => recordClick(id)}
-      className="block w-full rounded-2xl border border-white/60 bg-white/45 px-6 py-[18px] text-center text-[15px] font-semibold text-stone-800 shadow-[0_4px_24px_-8px_rgba(150,90,50,0.18)] backdrop-blur-xl transition duration-300 ease-out hover:-translate-y-px hover:bg-white/65 hover:shadow-[0_8px_28px_-8px_rgba(150,90,50,0.26)] focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 dark:border-white/10 dark:bg-white/[0.06] dark:text-stone-100 dark:hover:bg-white/[0.1]"
+      onClick={() => {
+        recordClick(id);
+        onClick?.();
+      }}
+      className="relative block w-full rounded-2xl border border-white/60 bg-white/45 px-6 py-[18px] text-center text-[15px] font-semibold text-stone-800 shadow-[0_4px_24px_-8px_rgba(150,90,50,0.18)] backdrop-blur-xl transition duration-300 ease-out hover:-translate-y-px hover:bg-white/65 hover:shadow-[0_8px_28px_-8px_rgba(150,90,50,0.26)] focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 dark:border-white/10 dark:bg-white/[0.06] dark:text-stone-100 dark:hover:bg-white/[0.1]"
     >
-      {title}
+      {/* 제목이 카드 가운데에 오도록 클릭 수는 오른쪽에 따로 띄웁니다. */}
+      <span className="block px-10">{title}</span>
+      <span className="absolute right-5 top-1/2 -translate-y-1/2 text-xs font-medium tabular-nums text-stone-400 dark:text-stone-500">
+        {count.toLocaleString("ko-KR")}회
+      </span>
     </a>
   );
 }

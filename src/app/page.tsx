@@ -1,4 +1,4 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import ProfileHeader from "@/components/ProfileHeader";
 import ThemeToggle from "@/components/ThemeToggle";
 import { profile } from "@/data/profile";
@@ -19,13 +19,7 @@ export default function Home() {
       <section className="relative mx-auto flex w-full max-w-md flex-col px-7 pb-20 pt-24 sm:pt-28">
         <ProfileHeader name={profile.name} bio={profile.bio} imageUrl={profile.imageUrl} />
 
-        <ul className="mt-12 flex flex-col gap-4">
-          {profile.links.map((link) => (
-            <li key={link.id}>
-              <LinkCard id={link.id} title={link.title} url={link.url} />
-            </li>
-          ))}
-        </ul>
+        <LinkList links={profile.links} />
       </section>
     </main>
   );
